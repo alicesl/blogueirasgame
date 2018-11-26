@@ -1,0 +1,65 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="conquistas.css">
+    <link rel="icon" href="imgs/logo.png">
+    <meta charset="utf-8">
+    <title>Conquistas</title>
+  </head>
+  <body>
+
+
+    <div class="modal" id="modal-balada">
+      <button id="fechar">x</button>
+      <div class="conteudo">
+        <div class="fase" id="balada">
+          <img src="imgs/balada.png" alt="Balada">
+          <p>Você tem <span class="pontuacao">0</span> na Little Balada</p>
+        </div>
+      </div>
+    </div>
+        
+
+    <div class="modal" id="modal-hotel">
+      <button id="fechar2">x</button>
+      <div class="conteudo">
+        <div class="fase" id="hotel">
+          <img src="imgs/hotel.png" alt="Hotel">
+          <p>Você tem <span class="pontuacao">0</span> no Platina Minas</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal" id="modal-makeup">
+      <button id="fechar3">x</button>
+      <div class="conteudo">
+        <div class="fase" id="makeup">
+          <img src="imgs/makeup.png" alt="Makeup">
+          <p>Você tem <span class="pontuacao">0</span> na Makeup Maquiagens</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal" id="modal-shopping">
+      <button id="fechar4">x</button>
+      <div class="conteudo">
+        <div class="fase" id="shopping">
+          <img src="imgs/shopping.png" alt="Shopping">
+          <p>Você tem <span class="pontuacao">0</span> no Shopping</p>
+        </div>
+      </div>  
+    </div>
+
+    <main>
+      <button class="btn modal-trigger" data-modal="modal-balada">Patrocínio Little Balada</button>
+      <button class="btn modal-trigger" data-modal="modal-hotel">Patrocínio Platina Minas</button>
+      <button class="btn modal-trigger" data-modal="modal-makeup">Patrocínio Makeup Maquiagens</button>
+      <button class="btn modal-trigger" data-modal="modal-shopping">Patrocínio Shopping</button>
+      <a href="index.html"><button id="voltar">⬅</button></a>
+    </main>
+  </body>
+  <script type="text/javascript" src="js/conquistas.js"></script>
+  <script type="text/javascript" src="js/modal.js"></script>
+</html>

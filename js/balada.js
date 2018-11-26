@@ -24,7 +24,7 @@ let tiposDeObjetos =
 		arquivo: 'imgs/balada/notas1_balada.gif',
 		pontuacao: 0
 	},
-	
+
 	{
 		arquivo: 'imgs/balada/notas2_balada.gif',
 		pontuacao: 0
@@ -70,7 +70,7 @@ function surgirObjeto ()
 		{
 			pontuacao+= objetoSorteado.pontuacao;
 			event.currentTarget.remove();
-			pontuacaoEl.innerHTML = pontuacao;
+			pontuacaoEl.innerHTML = pontuacao + "/150";
 			new Audio('audios/coin.wav').play();
 		});
 }
@@ -79,26 +79,26 @@ setInterval(surgirObjeto, 500);
 
 function fimDoJogo()
 {
-	let recadoEl = document.createElement('h2');
+	//let recadoEl = document.createElement('h2');
 	if (pontuacao >= 150)
 	{
 		alert('Parabéns! Você conseguiu o patrocínio da Little Balada')
-		recadoEl.innerHTML = 'Parabéns! Você conseguiu o patrocínio da Little Balada'
-		document.body.appendChild(recadoEl);
+		//recadoEl.innerHTML = 'Parabéns! Você conseguiu o patrocínio da Little Balada'
+		//document.body.appendChild(recadoEl);
 	}
 
 	else
 	{
 		alert('Você não conseguiu o patrocínio da Little Balada, tente de novo!')
-		recadoEl.innerHTML = 'Você não conseguiu o patrocínio da Little Balada, tente de novo!'
-		document.body.appendChild(recadoEl);
+		//recadoEl.innerHTML = 'Você não conseguiu o patrocínio da Little Balada, tente de novo!'
+		//document.body.appendChild(recadoEl);
 	}
 
 	pontuacaoEl.value = pontuacao;
 
-  	localStorage.setItem('pontuacao', JSON.stringify(pontuacao));
-	
-	
+  atualizaPontuacao('balada', pontuacao); //	localStorage.setItem('pontuacao', JSON.stringify(pontuacao));
+
+
 	location.href = 'mapa.html';
 }
 

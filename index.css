@@ -11,21 +11,17 @@ body
 h1{
 	text-align: center;
 }
-button{
+button {
 	display: block;
-	margin-left:50%;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 30px;
 	color: #fffcff;
 	padding: 10px 20px;
-	background: -webkit-gradient(
-		linear, left top, left bottom,
-		from(#f0c0e7),
-		to(#aa89b7));
-		border-radius: 30px;
-		border: 3px solid #000000;
-
+	background: linear-gradient(to right bottom, #f0c0e7, #aa89b7);
+	border-radius: 30px;
+	border: 3px solid #000000;
 }
+
 #play{
  	width:140px;
     height:90px;
@@ -33,7 +29,7 @@ button{
     top:50%;
     left:50%;
     margin-top:-120px;
-    margin-left:-45px;
+    margin-left:-70px;
 }
 #sobre{
  	width:140px;
@@ -42,7 +38,7 @@ button{
     top:50%;
     left:50%;
     margin-top:-20px;
-    margin-left:-45px;
+    margin-left:-70px;
 }
 #conquistas{
 	width:140px;
@@ -51,7 +47,7 @@ button{
     top:50%;
     left:50%;
     margin-top:80px;
-    margin-left:-45px;
+    margin-left:-70px;
     font-size: 19px;
 }
 .modal{
@@ -70,28 +66,32 @@ button{
 	opacity: 1;
 	pointer-events: initial;
 }
+
 #fechar{
-	float: right;
-	width: 10px;
+	width: 40px;
 	height: 40px;
-	position:absolute;
+	position: absolute;
 	right: 1%;
+	padding: 0;
+	cursor: pointer;
 }
+
 img{
 	width: 80px;
 	height: 80px;
 	border-radius: 80px;
+	float: left;
+	shape-outside: circle(50%);
 }
 
-#logo
-{
+#logo {
 	position: absolute;
 	image-rendering: pixelated;
 	width: 500px;
 	height: 450px;
 	float: left;
 	top: -85px;
-	right: 410px ;
+	left: calc(50% - 250px);
 }
 h2
 {

@@ -24,31 +24,31 @@ let tiposDeObjetos =
 		arquivo: 'imgs/shopping/diamante_shopping.png',
 		pontuacao: 3
 	},
-	
+
 	{
 		arquivo: 'imgs/shopping/donut_shopping.gif',
 		pontuacao: 2
-	}, 
+	},
 
 	{
 		arquivo: 'imgs/shopping/jogo_shopping.png',
 		pontuacao: 4
-	}, 
+	},
 
 	{
 		arquivo: 'imgs/shopping/oculos_shopping.png',
 		pontuacao: 3
-	}, 
+	},
 
 	{
 		arquivo: 'imgs/shopping/presente_shopping.png',
 		pontuacao: 2
-	}, 
+	},
 
 	{
 		arquivo: 'imgs/shopping/sanduiche_shopping.png',
 		pontuacao: 0
-	}, 
+	},
 
 	{
 		arquivo: 'imgs/shopping/sapato_shopping.png',
@@ -101,7 +101,7 @@ function surgirObjeto ()
 		{
 			pontuacao+= objetoSorteado.pontuacao;
 			event.currentTarget.remove();
-			pontuacaoEl.innerHTML = pontuacao;
+			pontuacaoEl.innerHTML = pontuacao  + "/300";
 			new Audio('audios/coin.wav').play();
 		});
 }
@@ -112,26 +112,32 @@ setInterval(surgirObjeto, 500);
 function fimDoJogo()
 {
 	let recadoEl = document.createElement('h2');
-	if (pontuacao >= 150)
+	if (pontuacao >= 5)
 	{
-		alert('Parabéns! Você conseguiu o patrocínio do Shopping')
+		//alert('Parabéns! Você conseguiu o patrocínio do Shopping')
 		recadoEl.innerHTML = 'Parabéns! Você conseguiu o patrocínio do Shopping'
 		document.body.appendChild(recadoEl);
+
+
+			pontuacaoEl.value = pontuacao;
+
+  			atualizaPontuacao('balada', pontuacao); //	localStorage.setItem('pontuacao', JSON.stringify(pontuacao));
+
+			location.href = 'ganhou.html';
 	}
 
 	else
 	{
-		alert('Você não conseguiu o patrocínio do Shopping, tente de novo!')
+		//alert('Você não conseguiu o patrocínio do Shopping, tente de novo!')
 		recadoEl.innerHTML = 'Você não conseguiu o patrocínio do Shopping, tente de novo!'
 		document.body.appendChild(recadoEl);
+
+		pontuacaoEl.value = pontuacao;
+
+  		atualizaPontuacao('balada', pontuacao); //	localStorage.setItem('pontuacao', JSON.stringify(pontuacao));
+
+		location.href = 'mapa.html';
 	}
-
-	pontuacaoEl.value = pontuacao;
-
-  	localStorage.setItem('pontuacao', JSON.stringify(pontuacao));
-	
-	
-	location.href = 'mapa.html';
 }
 
 setTimeout(fimDoJogo, 90000);

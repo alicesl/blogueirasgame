@@ -91,7 +91,7 @@ function surgirObjeto ()
 		{
 			pontuacao+= objetoSorteado.pontuacao;
 			event.currentTarget.remove();
-			pontuacaoEl.innerHTML = pontuacao;
+			pontuacaoEl.innerHTML = pontuacao  + "/250";
 			new Audio('audios/coin.wav').play();
 		});
 }
@@ -102,25 +102,25 @@ setInterval(surgirObjeto, 500);
 function fimDoJogo()
 {
 	let recadoEl = document.createElement('h2');
-	if (pontuacao >= 150)
+	if (pontuacao >= 250)
 	{
-		alert('Parabéns! Você conseguiu o patrocínio da Makeup Maquiagens')
+		//alert('Parabéns! Você conseguiu o patrocínio da Makeup Maquiagens')
 		recadoEl.innerHTML = 'Parabéns! Você conseguiu o patrocínio da Makeup Maquiagens'
 		document.body.appendChild(recadoEl);
 	}
 
 	else
 	{
-		alert('Você não conseguiu o patrocínio da da Makeup Maquiagens, tente de novo!')
+		//alert('Você não conseguiu o patrocínio da da Makeup Maquiagens, tente de novo!')
 		recadoEl.innerHTML = 'Você não conseguiu o patrocínio da Makeup Maquiagens, tente de novo!'
 		document.body.appendChild(recadoEl);
 	}
 
 	pontuacaoEl.value = pontuacao;
 
-  	localStorage.setItem('pontuacao', JSON.stringify(pontuacao));
-	
-	
+  	atualizaPontuacao('balada', pontuacao); //	localStorage.setItem('pontuacao', JSON.stringify(pontuacao));
+
+
 	location.href = 'mapa.html';
 }
 setTimeout(fimDoJogo, 90000);

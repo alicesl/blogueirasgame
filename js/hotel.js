@@ -75,7 +75,7 @@ function surgirObjeto ()
 		{
 			pontuacao+= objetoSorteado.pontuacao;
 			event.currentTarget.remove();
-			pontuacaoEl.innerHTML = pontuacao;
+			pontuacaoEl.innerHTML = pontuacao  + "/200";
 			new Audio('audios/coin.wav').play();
 		});
 }
@@ -85,7 +85,7 @@ setInterval(surgirObjeto, 500);
 function fimDoJogo()
 {
 	let recadoEl = document.createElement('h2');
-	if (pontuacao >= 150)
+	if (pontuacao >= 200)
 	{
 		alert('Parabéns! Você conseguiu o patrocínio do Platina Minas')
 		recadoEl.innerHTML = 'Parabéns! Você conseguiu o patrocínio do Platina Minas'
@@ -101,8 +101,7 @@ function fimDoJogo()
 
 	pontuacaoEl.value = pontuacao;
 
-  	localStorage.setItem('pontuacao', JSON.stringify(pontuacao));
-	
-	
+	atualizaPontuacao('hotel', pontuacao); //	localStorage.setItem('pontuacao', JSON.stringify(pontuacao));
+
 	location.href = 'mapa.html';
 }
